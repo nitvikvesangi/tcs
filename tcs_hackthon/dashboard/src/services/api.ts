@@ -1,6 +1,6 @@
 import { Recommendation, RecommendationFilters } from '../types/recommendation';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = '';
 
 export const getRecommendations = async (filters?: RecommendationFilters): Promise<Recommendation[]> => {
   try {

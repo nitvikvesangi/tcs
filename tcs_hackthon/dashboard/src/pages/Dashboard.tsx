@@ -59,7 +59,7 @@ export const Dashboard: React.FC = () => {
         <div>
           <div className="flex items-center gap-2 mb-1">
             <h1 className="text-2xl font-bold text-slate-900">Good Morning, Retailer 👋</h1>
-            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">DEMO MODE • MOCK DATA</span>
+            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-green-100 text-green-800 border border-green-200">LIVE DATA • AI POWERED</span>
           </div>
           <p className="text-slate-500">AI-powered insights for your quick-commerce operations</p>
         </div>
