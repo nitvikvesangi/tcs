@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.Python
+
+# Environment
+.env
+
+# Data / models (synthetic data + trained models are generated, not committed)
+data/synthetic/*.csv
+data/synthetic/*.json
+models/*.joblib
+models/*.pkl
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Alembic
+# (versions ARE committed; only local scratch is ignored)
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
