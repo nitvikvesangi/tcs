@@ -41,8 +41,9 @@ def get_df():
 # Try to import ML engine
 _predict_action = None
 try:
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
-    sys.path.insert(0, project_root)
+    _project_root = "/Users/nitvik/Documents/Dev/hackathon-project"
+    if _project_root not in sys.path:
+        sys.path.insert(0, _project_root)
     from ml_engine import predict_action
     _predict_action = predict_action
 except Exception:
@@ -190,6 +191,10 @@ def get_recommendations(
 def chat_feed(req: Dict[str, Any]):
     message = req.get("message", "") or req.get("content", "")
     try:
+        # Ensure project root is on path so ai_engine.py is always found
+        _project_root = "/Users/nitvik/Documents/Dev/hackathon-project"
+        if _project_root not in sys.path:
+            sys.path.insert(0, _project_root)
         from ai_engine import _call_llm
         df = get_df()
         clearance_sample = df[df["recommended_action"] == "CLEARANCE"][
