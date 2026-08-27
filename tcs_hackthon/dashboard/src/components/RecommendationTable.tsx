@@ -27,9 +27,9 @@ export const RecommendationTable: React.FC<Props> = ({ data, onRowClick, classNa
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100">
-          {data.map((rec) => (
+          {data.map((rec, idx) => (
             <tr 
-              key={rec.product_id} 
+              key={`${rec.product_id}-${rec.dark_store_id}-${idx}`} 
               onClick={() => onRowClick?.(rec)}
               className={cn(
                 "group transition-colors", 

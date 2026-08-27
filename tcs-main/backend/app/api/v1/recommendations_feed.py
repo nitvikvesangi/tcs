@@ -181,9 +181,9 @@ Promote items: {promote_sample}
 Answer the manager with specific product names, store IDs, stock, and rupee (₹) pricing. Never give generic boilerplate."""
         
         reply = _call_llm([{"role": "system", "content": sys_prompt}, {"role": "user", "content": message}], temperature=0.3, max_tokens=600)
-        return {"response": reply, "content": reply}
+        return {"answer": reply, "response": reply, "content": reply}
     except Exception as e:
-        return {"response": f"AI Assistant: {message}. (LLM key error: {e})", "content": f"AI Assistant: {message}"}
+        return {"answer": f"AI Assistant: {message}. (LLM key error: {e})", "response": f"AI Assistant: {message}", "content": f"AI Assistant: {message}"}
 
 @router.get("/inventory")
 def get_inventory_feed():

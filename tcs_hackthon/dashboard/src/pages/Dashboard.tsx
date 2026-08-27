@@ -92,8 +92,8 @@ export const Dashboard: React.FC = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {topOpportunities.map(rec => (
-                <RecommendationCard key={rec.product_id} recommendation={rec} onClick={() => setSelectedRec(rec)} />
+              {topOpportunities.map((rec, idx) => (
+                <RecommendationCard key={`${rec.product_id}-${rec.dark_store_id}-${idx}`} recommendation={rec} onClick={() => setSelectedRec(rec)} />
               ))}
             </div>
           )}
