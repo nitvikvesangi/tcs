@@ -63,6 +63,10 @@ app.include_router(promotions_router, prefix=settings.API_V1_PREFIX + "/promotio
 # Phase 5: chat
 app.include_router(chat_router, prefix=settings.API_V1_PREFIX + "/chat", tags=["chat"])
 
+# React Frontend Feed Router (Direct support for http://localhost:5173)
+from app.api.v1.recommendations_feed import router as feed_router
+app.include_router(feed_router, tags=["frontend_feed"])
+
 
 @app.get("/", tags=["health"])
 def root() -> dict:
