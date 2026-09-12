@@ -9,7 +9,6 @@ venv/
 .venv/
 ENV/
 *.egg-info/
-dist/
 build/
 
 # Environment Variables & Secrets
@@ -25,9 +24,19 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# Build output (regenerated with npm run build)
+dashboard/dist/
+
 # Database & SQLite
 *.db
 *.sqlite3
+
+# ML model artifacts
+models/
+*.pkl
+
+# Dataset (too large for git — download separately)
+*.csv
 
 # OS / Editor
 .DS_Store
@@ -37,6 +46,13 @@ yarn-error.log*
 .idea/
 *.swp
 *.swo
+Thumbs.db
 
 # Temporary logs
 *.log
+
+# Old project folders (kept locally, not tracked)
+backend/
+tcs-main/
+tcs_hackthon/
+promo
